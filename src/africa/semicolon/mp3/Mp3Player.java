@@ -106,11 +106,15 @@ public class Mp3Player {
 
     public void playPreviousSong() {
         if (isOn)
-            for (int i = 0; i < musiclist.size(); i++) {
+            for (int i = 1; i < musiclist.size(); i++) {
                 if (musiclist.get(i).equals(currentlyPlayingMusic)) {
                     currentlyPlayingMusic = musiclist.get(i - 1);
                     break;
                 }
             }
+                    if (currentlyPlayingMusic == musiclist.get(0) ) {
+                        currentlyPlayingMusic = musiclist.get(musiclist.size() - 1);
+                    }
+
     }
 }
